@@ -1,0 +1,53 @@
+General:
+  InputPath: "../data/{SamplePath}.root:{SamplePath}"
+  VariationPath: "nominal"
+  Measurement: "example"
+  HistogramFolder: "../data/"
+
+Regions:
+  - Name: "Signal_region"
+    RegionPath: "signal_region"
+
+Samples:
+
+  - Name: "Data"
+    SamplePath: "data"
+    Data: True
+
+  - Name: "Signal"
+    SamplePath: "Bd_Dstmu"
+    DisableStaterror: False
+
+  - Name: "Bu_Dststmunu"
+    SamplePath: "Bu_Dststmunu"
+    DisableStaterror: False
+
+  - Name: "Bu_DstD"
+    SamplePath: "Bu_DstD"
+    DisableStaterror: False
+
+  - Name: "Combinatorial"
+    SamplePath: "comb"
+    DisableStaterror: False 
+
+NormFactors:
+  - Name: "Bd_Dstmu_norm"
+    Samples: "Signal"
+    Nominal:  4938045.1430
+    Bounds: [0,10000000]
+
+  - Name: "Bu_Dststmunu_norm"
+    Samples: "Bu_Dststmunu"
+    Nominal: 952027.6969
+    Bounds: [0,100000000]
+
+  - Name: "Bu_DstD_norm"
+    Samples: "Bu_DstD"
+    Nominal: 65806.3106
+    Bounds: [0,100000000]
+
+  - Name: "comb_norm"
+    Samples: "Combinatorial"
+    Nominal: 9143.6973 
+    Bounds: [0,10000000]
+
