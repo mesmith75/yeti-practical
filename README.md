@@ -1,2 +1,2 @@
-# yeti-practical
-Practical example for YETI 2023
+# YETI practical example
+Here is some code for the YETI 2023 practical example
