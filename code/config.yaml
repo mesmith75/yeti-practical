@@ -1,53 +1,75 @@
 General:
-  InputPath: "../data/{SamplePath}.root:{SamplePath}"
+  InputPath: "/home/mark/Documents/localWork/yeti-practical/data/{SamplePath}"
   VariationPath: "nominal"
   Measurement: "example"
   HistogramFolder: "../data/"
 
 Regions:
   - Name: "Signal_region"
-    RegionPath: "signal_region"
+    Variable: "B0_Mcorr"
+    Binning: [3, 4.5, 5, 5.5, 6, 6.5, 7]
+    Filter: "mu_ProbNNmu > 0.8"
 
 Samples:
 
   - Name: "Data"
-    SamplePath: "data"
+    SamplePath: "data_test.root"
+    Tree: "DecayTree"
     Data: True
 
   - Name: "Signal"
-    SamplePath: "Bd_Dstmu"
+    SamplePath: "B02Dstarmunu_Dstar2D0pi_EvtGen_tree.root"
+    Tree: "DecayTree"
     DisableStaterror: False
 
-  - Name: "Bu_Dststmunu"
-    SamplePath: "Bu_Dststmunu"
+  - Name: "Bu_Dststmunu_2420"
+    SamplePath: "Bu2Dstarstarmunu_Dstarstar2D0pi_EvtGen_D12420_tree.root"
+    Tree: "DecayTree"
+    DisableStaterror: False
+
+  - Name: "Bu_Dststmunu_2460"
+    SamplePath: "Bu2Dstarstarmunu_Dstarstar2D0pi_EvtGen_D2star2460_tree.root"
+    Tree: "DecayTree"
     DisableStaterror: False
 
   - Name: "Bu_DstD"
-    SamplePath: "Bu_DstD"
+    SamplePath: "Bu2DstarDK_Dstar2D0pi_D2K0munu_EvtGen_tree.root"
+    Tree: "DecayTree"
     DisableStaterror: False
 
   - Name: "Combinatorial"
-    SamplePath: "comb"
+    SamplePath: "Combinatorial_data.root"
+    Tree: "DecayTree"
     DisableStaterror: False 
 
 NormFactors:
   - Name: "Bd_Dstmu_norm"
     Samples: "Signal"
-    Nominal:  4938045.1430
+    Nominal: 4938045.1430
+    #Nominal: 1.
     Bounds: [0,10000000]
 
-  - Name: "Bu_Dststmunu_norm"
-    Samples: "Bu_Dststmunu"
+  - Name: "Bu_Dststmunu_2420_norm"
+    Samples: "Bu_Dststmunu_2420"
     Nominal: 952027.6969
+    #Nominal: 1.
+    Bounds: [0,100000000]
+
+  - Name: "Bu_Dststmunu_2460_norm"
+    Samples: "Bu_Dststmunu_2460"
+    Nominal: 502027.6969
+    #Nominal: 1.
     Bounds: [0,100000000]
 
   - Name: "Bu_DstD_norm"
     Samples: "Bu_DstD"
     Nominal: 65806.3106
+    #Nominal: 1.
     Bounds: [0,100000000]
 
   - Name: "comb_norm"
     Samples: "Combinatorial"
     Nominal: 9143.6973 
+    #Nominal: 1.
     Bounds: [0,10000000]
 
